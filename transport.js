@@ -324,7 +324,14 @@ function processText() {
 	//document.getElementById("display").innerHTML = "Hello";
     var shift = parseInt(document.getElementById("shift-label").innerHTML);
 
-    detectCipher();
+    var cipher = getCipherSelection();
+    if(cipher == "detect") {
+	detectCipher();
+    } else if(cipher == "spanish") {
+	setCipherSpa();
+    } else if(cipher == "american") {
+	setCipherAme();
+    }
 
 	var text = getFormText();
 	var lines = text.split("\n");
